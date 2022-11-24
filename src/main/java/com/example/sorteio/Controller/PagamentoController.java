@@ -52,9 +52,8 @@ public class PagamentoController {
     @PostMapping
     public String pagamento(@Valid PagamentoForms pagamentoForms) throws Exception {
         int preco=20;
-        float valor = pagamentoForms.getTransactionAmount();
-        pagamentoForms.setQuantity((int)pagamentoForms.getTransactionAmount()/preco);
-        System.out.println(pagamentoForms.getQuantity());
+        int quantity =(int)pagamentoForms.getTransactionAmount()/preco;
+    
          MercadoPago.SDK.setAccessToken("APP_USR-3463030374526538-022318-f50ce6994e1dc084d9287755a691bb7b-717750861");
         //MercadoPago.SDK.setAccessToken("TEST-3209866243427991-101516-9ab38146753d03668d94d996f62007cb-211142859");
 
@@ -128,7 +127,7 @@ public class PagamentoController {
                 }
                 int numeroSorteio=0;
                 String numerosSorteados="";
-                for(int i=0; i < pagamentoForms.getQuantity(); i++){
+                for(int i=0; i < quantity; i++){
 
                     numeroSorteio = RetornaNumeroSorteado();
                     numerosSorteados +=""+numeroSorteio+", ";
@@ -184,7 +183,7 @@ public class PagamentoController {
 
                         int numeroSorteio=0;
                         String numerosSorteados="";
-                        for(int i=0; i < pagamentoForms.getQuantity(); i++){
+                        for(int i=0; i < quantity; i++){
         
                             numeroSorteio = RetornaNumeroSorteado();
                             numerosSorteados +=""+numeroSorteio+", ";

@@ -16,7 +16,7 @@ public class PagamentoForms {
 	private String lastname;
 	private String telefone;
 	private String id_transacao;
-	private int quantity;
+	
 
 
 
@@ -27,18 +27,7 @@ public class PagamentoForms {
 
 
 
-	public int getQuantity() {
-		return quantity;
-	}
 
-
-
-
-
-
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
 
 
 
@@ -317,7 +306,7 @@ public class PagamentoForms {
 
 	public  Pagamento converter() {
 		// TODO Auto-generated method stub
-		return new Pagamento(transactionAmount, token, description ,installments ,paymentMethodId ,docType ,docNumber ,email, status_pagamento,name,lastname,telefone,id_transacao, quantity);
+		return new Pagamento(transactionAmount, token, description ,installments ,paymentMethodId ,docType ,docNumber ,email, status_pagamento,name,lastname,telefone,id_transacao);
 	}
 
 }

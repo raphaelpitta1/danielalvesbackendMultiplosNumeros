@@ -23,7 +23,7 @@ public class Pagamento {
 	private String lastname;
 	private String telefone;
 	private String id_transacao;
-	private int quantity;
+
 	
 
 	public String getTelefone() {
@@ -52,7 +52,7 @@ public class Pagamento {
 
 	public Pagamento(float transactionAmount, String token,
 			String description, int installments, String paymentMethodId, String docType, String docNumber,
-			String email, String status_pagamento, String name, String lastname,  String telefone, String id_transacao, int quantity) {
+			String email, String status_pagamento, String name, String lastname,  String telefone, String id_transacao) {
 		
 		this.id = id;
 		
@@ -70,7 +70,7 @@ public class Pagamento {
 		this.lastname =lastname;
 		this.telefone = telefone;
 		this.id_transacao= id_transacao;
-		this.quantity = quantity;
+	
 	}
 
 	public int getId() {
@@ -186,13 +186,6 @@ public class Pagamento {
 		this.id_transacao = id_transacao;
 	}
 
-	public int getquantity() {
-		return quantity;
-	}
-
-	public void setquantity(int quantity) {
-		this.quantity = quantity;
-	}
 
 
 
